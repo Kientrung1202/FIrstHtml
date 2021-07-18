@@ -1,0 +1,226 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    background-color: transparent;
+    position: absolute;
+    padding: 15px 0px;
+    width: 100%;
+}
+html,body{
+    font-family: sans-serif;
+}
+/* .container{
+    max-width: 1140px;
+    display: block;
+    margin: 0 auto; /* để căn giữa cho header 
+    
+}*/
+.row{
+    flex-wrap: none;
+    align-items: center;
+}
+.row .logo{
+    display: block;/* do default no k la block*/
+    max-width: 100px;
+}
+.logo img{
+    width: 100%;
+} 
+.main-option{
+    display: flex;
+    align-items: center; 
+}
+.main-option li a{
+    display: block;
+    color: white ; 
+    text-decoration: none;
+    padding: 20px;
+}
+.main-option li a:hover{
+    color: blue ;
+}
+.main-option li{
+    list-style: none;
+}
+.search-box{
+    display: block;
+    margin-left: auto;
+}
+.search-box .sb-submit{
+    color :transparent ;
+    height: 25px;
+    width: 25px;
+    background: transparent url(../images/lup.png) no-repeat center;
+    /* để k bị nhắc lại, transparent lam cho trong suot,
+    và cái cực kỳ quan trọng là dấu ../ trước link ảnh kia
+    */ 
+    background-size: contain; 
+    border: none; 
+}
+.search-box .sb-text{
+    border: 0px;
+    border-radius: 20px;
+    padding: 0; 
+    width : 0px; 
+    transition: 0.5s;
+}
+.row .menu-button{
+    width: 30px;
+    height: 20px;
+    position: relative; 
+}
+.menu-button span{
+    background: aqua;
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    left: 6px;
+    transition:0.5s ;
+}
+.menu-button .span1{
+    top: 0px;
+}
+.menu-button .span2{
+    top:50% ;
+    transform: translateY(-50%);
+}
+.menu-button .span3{
+    bottom: 0px;
+}
+/* .clearfix::after{
+    content: '';
+    display: block;
+    clear: both;
+} */
+.menu-container{
+    position: absolute;
+    background: white;
+    width: 100%;
+    left: 0;
+    margin: 0 auto;
+    left: -10px;
+    /*display : none; khong dung vi nhu the k ket hop 
+    voi transision duoc*/
+    opacity: 0 ; 
+    visibility: hidden;
+    transition: 0.5s; 
+    transform: translateY(30px);
+}
+.menu-container .container{
+    margin-left: 100px ;
+    margin-left: auto;
+}
+.menu-container .container #menu li{
+    float: left;
+    width: 160px;
+    list-style: none;
+    padding: 10px 0px;
+    margin: 0 10px;
+}
+.menu-container .container #menu li a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-size: medium;
+    border-bottom: 2px solid #333;/* một attribute của border*/
+}
+.menu-container .container #menu li a:hover{
+    color: blue;
+}
+.menu-container .container #menu .sub-category li{
+   float: none;
+   margin: 0;
+}
+.menu-container .container #menu .sub-category li a{
+    border-bottom: none;
+    color: black;
+}
+.menu-container .container #menu .sub-category li a:hover{
+    color: blue;
+}
+.open {
+    opacity: 1 ; 
+    visibility: visible; 
+    transform: translateY(0px);
+}
+.menu-button .span1.open{
+    top:50%; 
+    transform: rotate(145deg);
+}
+.menu-button .span2.open{
+    width: 0;
+    opacity: 0 ; 
+}
+.menu-button .span3.open{
+    top: 50%;
+    transform: rotate(-145deg);
+}
+.sb-text.open{
+    width: 200px;
+    padding: 0 10px;
+}
+#hero-image{
+    background: transparent url(../images/nature.png)
+    no-repeat center ; 
+    padding: 255px 0px;
+    margin: 0;
+    box-shadow: 0 10px 15px grey;
+    background-attachment: fixed;
+
+}
+#hero-image .hero-content{
+    color: white;
+}
+#hero-image .hero-content h2{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+    text-shadow: 0 5px 5px black;
+}
+#hero-image p:last-child{
+    position: relative;
+    padding-bottom: 40px; 
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+#hero-image p:last-child::after{
+    position: absolute;
+    content: "";
+    bottom: 15px;
+    width:200px;
+    height: 1px;
+    background: white;
+    left: 50%; 
+    transform: translateX(-50%);
+}
+.button-css{
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #fff;
+    display: inline-block;
+    position: relative;
+    padding: 5px 15px 5px 15px;
+    border-radius: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.button-css:hover{
+    text-decoration: none;
+    color: #fff;
+}
+.button-css::after{
+    content:'';
+    position: absolute; /* follow the button-css*/
+    width: 0%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    transition: 0.5s;
+    background-color: #fff;
+}
+.button-css:hover::after{
+    width:100%;
+}
